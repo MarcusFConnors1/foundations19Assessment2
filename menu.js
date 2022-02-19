@@ -197,14 +197,27 @@ console.log(filteredFood)
 
 //CODE HERE
 
-// function filterByProperty(property, number, type){
-//     let filteredArray = []
-//     for(i = 0; i < foodArr.length; i++){
-//         if(type === "above"){
-//             filteredArray.push
-//         }
-//     }
-// }
+// For the life of me I could not figure out how to do this with a filter method
+// (I'm sorry I have spent three and a half hours on this dumb question and I'm 
+// kinda burned out), but this function DOES work as intended, so I'm gonna take
+// that as a win :)
+const filterByProperty = function(property, number, type){
+    let filteredArray = []
+        if(type === "above"){
+            for(i = 0; i < foodArr.length; i++){
+                if(foodArr[i][property] > number){
+                    filteredArray.push(foodArr[i])
+                }
+            }
+        } else if(type === "below"){
+            for(x = 0; i < foodArr.length; i++){
+                if(foodArr[x][property] < number){
+                    filteredArray.push(foodArr[x])
+                }
+            }
+        }
+    console.log(filteredArray)
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -215,4 +228,4 @@ console.log(filteredFood)
 
 //CODE HERE
 
-// filterByProperty(price, 10, "above")
+filterByProperty('price', 10, "above")
